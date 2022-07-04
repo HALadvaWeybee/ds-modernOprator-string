@@ -112,3 +112,18 @@ for(const [name, value] of gameEvents) {
   const part = name <= 45 ?'FIRST' : 'SECOND'; 
   console.log(`[${part} HALF]${name}: ${value}`);
 }
+
+// coding challenge -4
+function convertCamelCase(str) {
+    
+    const name = str.split('_');
+    const camelName = [];
+
+    for(const item of name) {
+       camelName.push(item.replace(item[0], item[0].toUpperCase()));
+    }
+
+    return camelName.join('_');
+}
+
+console.log(convertCamelCase('underscore_case'));;
