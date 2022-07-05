@@ -49,6 +49,17 @@ const restaurant = {
   },
 };
 
+// String methods practice
+const getCode = str => str.slice(0, 3).toUpperCase();
+
+console.log(flights.split('+'));
+for(const fight of flights.split('+')) {
+  const [type, from, txt, time] = fight.split(';');
+
+  const output = `${type.startsWith('_Delayed') ? '🔴': ' '} ${type.replaceAll('_',' ')} ${getCode(from)} to ${getCode(txt)} ${time.replace(':','h')}`;
+  console.log(output.padStart(40));
+}
+// -------------------------------------------------------------------------------------------------------------------------------
 
 // Working With Strings - Part 3
 // Split and join
@@ -99,6 +110,7 @@ const planesInLine = function (n) {
 planesInLine(5);
 planesInLine(3);
 planesInLine(12); */
+// -------------------------------------------------------------------------------------------------------------------------------
 
 // working with string -part-2
 /* const airline = 'TAP Air Portugal'; 
@@ -158,7 +170,7 @@ const checkBaggage = function (items) {
 checkBaggage('I have a laptop, some Food and a pocket Knife');
 checkBaggage('Socks and camera');
 checkBaggage('Got some snacks and a gun for protection'); */
-
+// -------------------------------------------------------------------------------------------------------------------------------
 
 // Working with strings -part 1
 /* const airline = 'TAP Air Portugal';
@@ -201,6 +213,7 @@ checkMiddleSeat('3E');
 
 console.log(typeof new String('himanshu'));
 console.log(typeof new String('himanshu').slice(2)); */
+// -------------------------------------------------------------------------------------------------------------------------------
 
 // Summary Which data structure 
 // Maps_iteration
@@ -235,6 +248,7 @@ console.log(question.get(question.get('correct') === answer));
 console.log([...question]);
 console.log([...question.keys()]);
 console.log([...question.values()]); */
+// -------------------------------------------------------------------------------------------------------------------------------
 
 // MAPS
 /* const rest = new Map();
@@ -268,6 +282,7 @@ console.log(rest.get(arr));
 
 rest.set(document.querySelector('h1'), 'heading');
 console.log(rest); */
+// -------------------------------------------------------------------------------------------------------------------------------
 
 // SETS
 /* const orderSet = new Set(['pizza','mango','banana','sandwich','apple']);
@@ -311,6 +326,7 @@ const entries = Object.entries(openingHours);
 for(const [key, {open, close}] of entries) {
   console.log(`${key} ${open} ${close}`);
 } */
+// -------------------------------------------------------------------------------------------------------------------------------
 
 // Optional chaining
 /* if(restaurant.openingHours && restaurant.openingHours.mon) {
@@ -339,15 +355,10 @@ console.log(users[0]?.name ?? "User array empty");
  */
 
 // Enhanced Object literals
-// map for loop 
-//  rest parameter
-// spredad parameter to add element to the array
-// for of loop in array
-//  [x, y, ...{}]
-// object key value pair print
 // 1) moving the defination of inner object out of parent object
 // 2) remove in function keyword in object method
 // 3) create the 
+// -------------------------------------------------------------------------------------------------------------------------------
 
 // The for-of Loop
 /* const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
@@ -361,8 +372,8 @@ for(let [i, el] of menu.entries()) {
 }
 
 // console.log([...menu.entries()]); */
+// -------------------------------------------------------------------------------------------------------------------------------
 
-///////////////////////////////////////
 // Logical Assignment Operators
 /* const rest1 = {
   name: 'Capri',
@@ -394,8 +405,8 @@ rest2.owner &&= '<ANONYMOUS>';
 console.log(rest1);
 console.log(rest2);
  */
+// -------------------------------------------------------------------------------------------------------------------------------
 
-///////////////////////////////////////
 // The Nullish Coalescing Operator
 /* restaurant.numGuests = 0;
 const guests = restaurant.numGuests || 10;
@@ -405,8 +416,8 @@ console.log(guests);
 const guestCorrect = restaurant.numGuests ?? 10;
 console.log(guestCorrect); 
  */
+// -------------------------------------------------------------------------------------------------------------------------------
 
-///////////////////////////////////////
 // Short Circuiting (&& and ||)
 /* console.log('---- OR ----');
 // Use ANY data type, return ANY data type, short-circuiting
@@ -437,8 +448,8 @@ if (restaurant.orderPizza) {
 
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach'); */
 
+// -------------------------------------------------------------------------------------------------------------------------------
 
-///////////////////////////////////////
 // Rest Pattern and Parameters
 // 1) Destructuring
 
@@ -476,6 +487,7 @@ add(...x);
 restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
 restaurant.orderPizza('mushrooms');
  */
+// -------------------------------------------------------------------------------------------------------------------------------
 
 // Spread operator
 /* const arr = [7, 8, 9];
@@ -525,6 +537,7 @@ const restaurantCopy = {...restaurant};
 restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.name);
 console.log(restaurant.name); */
+// -------------------------------------------------------------------------------------------------------------------------------
 
 // destructuring object
 /* restaurant.orderDelivery({
@@ -558,7 +571,8 @@ console.log(a, b);
 // nested  objects
 const {fri : {open : o, close : c}} = openingHours;
 console.log(o, c); */
- 
+// -------------------------------------------------------------------------------------------------------------------------------
+
 // destructuring Array
 /* const arr = [1, 2, 3];
 const a = arr[0];

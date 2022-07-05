@@ -114,16 +114,20 @@ for(const [name, value] of gameEvents) {
 }
 
 // coding challenge -4
-function convertCamelCase(str) {
-    
-    const name = str.split('_');
-    const camelName = [];
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
 
-    for(const item of name) {
-       camelName.push(item.replace(item[0], item[0].toUpperCase()));
-    }
+document.querySelector('button').addEventListener('click', function() {
+   const text = document.querySelector('textarea').value;
+   const rows = text.split('\n');
 
-    return camelName.join('_');
-}
+   for(const [i, row] of rows.entries()) {
+     const [first, second] = row.toLowerCase().trim().split('_');
 
-console.log(convertCamelCase('underscore_case'));;
+     const output = `${first}${second.replace(second[0], second[0].toUpperCase())}`;
+
+     console.log(`${output.padEnd(20)}${'✅'.repeat(i+1)}`);
+   }
+});
+
+console.log('12'.repeat(5));
